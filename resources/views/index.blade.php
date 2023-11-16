@@ -39,7 +39,7 @@
                                 <td>{{$post->category_id}}</td>
                                 <td>{{date('d-m-Y', strtotime($post->created_at))}}</td>
                                 <td>
-                                    <a class="btn-sm btn-success text-decoration-none" href="">Show</a>
+                                    <a class="btn-sm btn-success text-decoration-none" href="{{route('posts.show',$post->id)}}">Show</a>
                                     <a class="btn-sm btn-primary text-decoration-none" href="{{route('posts.edit', $post->id)}}">Edit</a>
                                     <a class="btn-sm btn-danger text-decoration-none" href="">Delete</a>
                                 </td>
