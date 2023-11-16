@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('posts',PostController::class);
+Route::get('/posts/trash', [PostController::class,'trashed'])->name('posts.trashed');
 
-Route::get('/post/trash', [PostController::class,'trashed'])->name('posts.trashed');
+Route::resource('posts',PostController::class);
