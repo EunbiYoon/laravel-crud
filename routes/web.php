@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::resource('posts',PostController::class);
+
+Route::get('/post/trash', [PostController::class,'trashed'])->name('posts.trashed');
