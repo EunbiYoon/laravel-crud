@@ -36,12 +36,12 @@
                                 </td>
                                 <td>{{$post->title}}</td>
                                 <td>{{$post->description}}</td>
-                                <td>{{$post->category_id}}</td>
+                                <td>{{$post->category->name}}</td>
                                 <td>{{date('d-m-Y', strtotime($post->created_at))}}</td>
                                 <td>
                                     <div class="d-flex">
                                         <a class="btn-sm btn-success text-decoration-none" href="{{route('posts.restore',$post->id)}}">Restore</a>
-                                        <form action="{{route('posts_force_delete')}}" method="POST">
+                                        <form action="{{route('posts.force_delete',$post->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn-sm btn-danger btn">Delete</button>
